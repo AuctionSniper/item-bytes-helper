@@ -89,11 +89,11 @@ function main() {
 
       auctions = auctions.filter(auction => {
         const similarity = stringSimilarity.compareTwoStrings(
-          name,
-          auction.name,
+          name.toLowerCase(),
+          auction.name.toLowerCase(),
         );
 
-        return similarity >= 0.6;
+        return similarity >= 0.35;
       });
 
       console.log('----------------------');
